@@ -66,7 +66,7 @@ export const AboutSection = () => {
                   </a>
 
                   <a
-                    href="/public/md sahil full stack resume.pdf"
+                    href="/md sahil full stack resume.pdf"
                     className="px-4 py-2 sm:px-6 sm:py-3 rounded-lg border border-muted hover:bg-muted/50 transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-md hover:scale-[1.02] active:scale-95 text-sm sm:text-base"
                     download
                   >

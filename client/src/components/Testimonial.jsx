@@ -15,10 +15,7 @@ export const TestimonialSection = () => {
       id: 1,
       name: "Alex Johnson",
       role: "Product Director at TechCorp",
-      content: `Working with Sahil was seamless from day one.
-               Not only did they deliver a full-stack solution ahead of schedule, 
-               but they also communicated clearly throughout the project. 
-               It's rare to find a developer who understands both the tech and the business side so well`,
+      content: `Working with Sahil was seamless from day one. Not only did they deliver a full-stack solution ahead of schedule, but they also communicated clearly throughout the project. It's rare to find a developer who understands both the tech and the business side so well`,
       rating: 5,
       image: "/src/assets/testimonials/alex-johnson.png"
     },
@@ -26,9 +23,7 @@ export const TestimonialSection = () => {
       id: 2,
       name: "Maria Chen",
       role: "Senior UX Designer at DesignHub",
-      content: `I've reviewed hundreds of portfolios, and his work is truly exceptional. 
-                Tway the animations guide attention while maintaining performance is masterful. 
-                The gradient elements add depth without overwhelming.`,
+      content: `I've reviewed hundreds of portfolios, and his work is truly exceptional. Tway the animations guide attention while maintaining performance is masterful. The gradient elements add depth without overwhelming.`,
       rating: 5,
       image: "/src/assets/testimonials/maria-chen.png"
     },
@@ -36,19 +31,21 @@ export const TestimonialSection = () => {
       id: 3,
       name: "David Wilson",
       role: "CTO at Startup Ventures",
-      content: `From wireframes to deployment, 
-                Sahil owned the entire stack with confidence and creativity. 
-                The final product is fast, reliable, and looks incredible. I
-                wouldn’t hesitate to work with them again.Imagined Client at a SaaS Company`,
+      content: `From wireframes to deployment, Sahil owned the entire stack with confidence and creativity. The final product is fast, reliable, and looks incredible. I wouldn't hesitate to work with them again.`,
       rating: 5,
       image: "/src/assets/testimonials/David Wilson.png"
     },
-
   ];
 
   useEffect(() => {
     const handleResize = () => {
-      setItemsPerPage(window.innerWidth < 768 ? 1 : 3);
+      if (window.innerWidth < 640) {
+        setItemsPerPage(1);
+      } else if (window.innerWidth < 1024) {
+        setItemsPerPage(2);
+      } else {
+        setItemsPerPage(3);
+      }
       setCurrentIndex(0);
     };
 
@@ -103,7 +100,7 @@ export const TestimonialSection = () => {
   return (
     <section
       id="testimonials"
-      className="relative py-20 px-4 overflow-hidden bg-gradient-to-b from-primary/5 via-background to-background"
+      className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-primary/5 via-background to-background"
       ref={ref}
     >
       {/* Floating particles background */}
@@ -142,30 +139,30 @@ export const TestimonialSection = () => {
 
       <div className="container max-w-6xl mx-auto">
         <motion.div
-          className="space-y-16"
+          className="space-y-12 sm:space-y-16"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
           <motion.div className="text-center" variants={itemVariants}>
             <motion.div
-              className="text-lg font-mono text-primary mb-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20"
+              className="text-sm sm:text-lg font-mono text-primary mb-3 sm:mb-4 inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-2 rounded-full bg-primary/10 border border-primary/20"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              <Star className="h-4 w-4" />
+              <Star className="h-3 w-3 sm:h-4 sm:w-4" />
               Client Feedback
-              <Star className="h-4 w-4" />
+              <Star className="h-3 w-3 sm:h-4 sm:w-4" />
             </motion.div>
             <motion.h2
-              className="text-4xl md:text-5xl font-bold tracking-tight"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight"
               variants={itemVariants}
             >
               What People Say
             </motion.h2>
             <motion.p
-              className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto"
+              className="text-base sm:text-lg text-muted-foreground mt-3 sm:mt-4 max-w-2xl mx-auto"
               variants={itemVariants}
             >
               What Clients Will Say About Working with Me.
@@ -173,18 +170,18 @@ export const TestimonialSection = () => {
           </motion.div>
 
           <div className="relative">
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {visibleTestimonials.map((testimonial) => (
                 <motion.div
                   key={testimonial.id}
-                  className="bg-background/80 backdrop-blur-sm border rounded-xl p-8 shadow-sm hover:shadow-md transition-all h-full flex flex-col group"
+                  className="bg-background/80 backdrop-blur-sm border rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-all h-full flex flex-col group"
                   variants={itemVariants}
                   whileHover={{ y: -5 }}
                 >
                   <div className="flex flex-col h-full">
-                    <Quote className="h-8 w-8 text-primary/30 mb-4 group-hover:text-primary/50 transition-colors" />
+                    <Quote className="h-6 w-6 sm:h-8 sm:w-8 text-primary/30 mb-3 sm:mb-4 group-hover:text-primary/50 transition-colors" />
 
-                    <p className="text-lg text-muted-foreground mb-6 flex-1">
+                    <p className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6 flex-1">
                       "{testimonial.content}"
                     </p>
 
@@ -193,13 +190,13 @@ export const TestimonialSection = () => {
                         {[...Array(5)].map((_, i) => (
                           <Star
                             key={i}
-                            className={`h-5 w-5 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground/30'}`}
+                            className={`h-4 w-4 sm:h-5 sm:w-5 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground/30'}`}
                           />
                         ))}
                       </div>
 
-                      <div className="flex items-center gap-4 mt-4">
-                        <div className="relative h-12 w-12 rounded-full border-2 border-primary/20 group-hover:border-primary/50 overflow-hidden transition-all">
+                      <div className="flex items-center gap-3 sm:gap-4 mt-3 sm:mt-4">
+                        <div className="relative h-10 w-10 sm:h-12 sm:w-12 rounded-full border-2 border-primary/20 group-hover:border-primary/50 overflow-hidden transition-all">
                           {testimonial.image ? (
                             <img
                               src={testimonial.image}
@@ -214,8 +211,8 @@ export const TestimonialSection = () => {
                           )}
                         </div>
                         <div>
-                          <p className="font-medium">{testimonial.name}</p>
-                          <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                          <p className="font-medium text-sm sm:text-base">{testimonial.name}</p>
+                          <p className="text-xs sm:text-sm text-muted-foreground">{testimonial.role}</p>
                         </div>
                       </div>
                     </div>
@@ -224,53 +221,59 @@ export const TestimonialSection = () => {
               ))}
             </div>
 
-            {/* Navigation Arrows */}
-            <button
-              onClick={prevTestimonial}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 p-3 rounded-full border border-muted-foreground/20 hover:border-primary/50 bg-background/80 backdrop-blur-sm transition-all shadow-lg z-10 hidden md:flex items-center justify-center hover:scale-110"
-              aria-label="Previous testimonial"
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </button>
-
-            <button
-              onClick={nextTestimonial}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 p-3 rounded-full border border-muted-foreground/20 hover:border-primary/50 bg-background/80 backdrop-blur-sm transition-all shadow-lg z-10 hidden md:flex items-center justify-center hover:scale-110"
-              aria-label="Next testimonial"
-            >
-              <ChevronRight className="h-6 w-6" />
-            </button>
-          </div>
-
-          {/* Mobile Navigation */}
-          <div className="flex justify-center gap-4 md:hidden">
-            <button
-              onClick={prevTestimonial}
-              className="p-2 rounded-full border border-muted-foreground/20 hover:border-primary/50 bg-background/80 backdrop-blur-sm transition-all hover:scale-110"
-              aria-label="Previous testimonial"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-
-            <div className="flex items-center gap-2">
-              {Array.from({ length: totalPages }).map((_, index) => (
+            {/* Navigation Arrows - Show only when needed */}
+            {totalPages > 1 && (
+              <>
                 <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-all ${currentIndex === index ? 'bg-primary' : 'bg-muted-foreground/20'}`}
-                  aria-label={`Go to testimonial ${index + 1}`}
-                />
-              ))}
-            </div>
+                  onClick={prevTestimonial}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 p-2 sm:p-3 rounded-full border border-muted-foreground/20 hover:border-primary/50 bg-background/80 backdrop-blur-sm transition-all shadow-lg z-10 hidden sm:flex items-center justify-center hover:scale-110"
+                  aria-label="Previous testimonial"
+                >
+                  <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
+                </button>
 
-            <button
-              onClick={nextTestimonial}
-              className="p-2 rounded-full border border-muted-foreground/20 hover:border-primary/50 bg-background/80 backdrop-blur-sm transition-all hover:scale-110"
-              aria-label="Next testimonial"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
+                <button
+                  onClick={nextTestimonial}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 p-2 sm:p-3 rounded-full border border-muted-foreground/20 hover:border-primary/50 bg-background/80 backdrop-blur-sm transition-all shadow-lg z-10 hidden sm:flex items-center justify-center hover:scale-110"
+                  aria-label="Next testimonial"
+                >
+                  <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
+                </button>
+              </>
+            )}
           </div>
+
+          {/* Mobile Navigation - Show only when needed */}
+          {totalPages > 1 && (
+            <div className="flex justify-center gap-3 sm:gap-4 sm:hidden">
+              <button
+                onClick={prevTestimonial}
+                className="p-1 sm:p-2 rounded-full border border-muted-foreground/20 hover:border-primary/50 bg-background/80 backdrop-blur-sm transition-all hover:scale-110"
+                aria-label="Previous testimonial"
+              >
+                <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
+              </button>
+
+              <div className="flex items-center gap-2">
+                {Array.from({ length: totalPages }).map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all ${currentIndex === index ? 'bg-primary' : 'bg-muted-foreground/20'}`}
+                    aria-label={`Go to testimonial ${index + 1}`}
+                  />
+                ))}
+              </div>
+
+              <button
+                onClick={nextTestimonial}
+                className="p-1 sm:p-2 rounded-full border border-muted-foreground/20 hover:border-primary/50 bg-background/80 backdrop-blur-sm transition-all hover:scale-110"
+                aria-label="Next testimonial"
+              >
+                <ChevronRight className="h-4 w-4 sm:h-5 sm:h-5" />
+              </button>
+            </div>
+          )}
         </motion.div>
       </div>
 
@@ -282,7 +285,7 @@ export const TestimonialSection = () => {
         transition={{ delay: 1, duration: 1.5 }}
       >
         <motion.div
-          className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-gradient-to-r from-primary to-purple-500 blur-[100px] opacity-30"
+          className="absolute top-1/4 left-1/4 w-48 sm:w-64 h-48 sm:h-64 rounded-full bg-gradient-to-r from-primary to-purple-500 blur-[80px] sm:blur-[100px] opacity-30"
           animate={{
             x: [0, 20, 0],
             y: [0, -30, 0],
@@ -295,7 +298,7 @@ export const TestimonialSection = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-gradient-to-r from-blue-500 to-primary blur-[100px] opacity-30"
+          className="absolute bottom-1/4 right-1/4 w-48 sm:w-64 h-48 sm:h-64 rounded-full bg-gradient-to-r from-blue-500 to-primary blur-[80px] sm:blur-[100px] opacity-30"
           animate={{
             x: [0, -20, 0],
             y: [0, 30, 0],
