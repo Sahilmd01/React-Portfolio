@@ -21,6 +21,7 @@ export const ContactSection = () => {
     email: '',
     message: ''
   });
+  
   const validateForm = () => {
     if (!formData.name.trim()) {
       toast({
@@ -54,6 +55,7 @@ export const ContactSection = () => {
     
     return true;
   };
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -70,8 +72,7 @@ export const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('https://formspree.io/f/xwpbojaj', {//add your formspree link 
-
+      const response = await fetch('https://formspree.io/f/xwpbojaj', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -101,125 +102,124 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 relative bg-background">
+    <section id="contact" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 relative bg-background">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-primary/10 text-primary mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <span className="inline-block px-3 py-1 text-xs sm:text-sm font-medium rounded-full bg-primary/10 text-primary mb-3 sm:mb-4">
             Let's Connect
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">
             Get In Touch
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
             Have a project in mind or just want to say hi? My inbox is always open.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
           {/* Contact Information */}
-          <div className="space-y-8 p-8 rounded-2xl bg-gradient-to-br from-secondary/20 to-background border border-border">
-            <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-              <span className="w-4 h-4 rounded-full bg-primary"></span>
+          <div className="space-y-6 sm:space-y-8 p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-secondary/20 to-background border border-border">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex items-center gap-2">
+              <span className="w-3 sm:w-4 h-3 sm:h-4 rounded-full bg-primary"></span>
               Contact Details
             </h3>
 
-            <div className="space-y-6">
-              <div className="flex items-center gap-4 p-4 hover:bg-accent/30 rounded-xl transition-all duration-300">
-                <div className="p-3 rounded-xl bg-primary/10 text-primary">
-                  <Mail className="h-5 w-5" />
+            <div className="space-y-4 sm:space-y-6">
+              <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-accent/30 rounded-lg sm:rounded-xl transition-all duration-300">
+                <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary">
+                  <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Email</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Email</p>
                   <a
-                    href="mailto:hello@example.com"
-                    className="font-medium hover:text-primary transition-colors"
+                    href="mailto:codewithkinu@gmail.com"
+                    className="text-sm sm:text-base font-medium hover:text-primary transition-colors"
                   >
                     codewithkinu@gmail.com
                   </a>
                 </div>
               </div>
               
-              <div className="flex items-center gap-4 p-4 hover:bg-accent/30 rounded-xl transition-all duration-300">
-                <div className="p-3 rounded-xl bg-primary/10 text-primary">
-                  <Phone className="h-5 w-5" />
+              <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-accent/30 rounded-lg sm:rounded-xl transition-all duration-300">
+                <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary">
+                  <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Phone</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Phone</p>
                   <a
-                    href="tel:+11234567890"
-                    className="font-medium hover:text-primary transition-colors"
+                    href="tel:+919315145594"
+                    className="text-sm sm:text-base font-medium hover:text-primary transition-colors"
                   >
                     +91 9315145594
                   </a>
                 </div>
               </div>
               
-              <div className="flex items-center gap-4 p-4 hover:bg-accent/30 rounded-xl transition-all duration-300">
-                <div className="p-3 rounded-xl bg-primary/10 text-primary">
-                  <MapPin className="h-5 w-5" />
+              <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-accent/30 rounded-lg sm:rounded-xl transition-all duration-300">
+                <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary">
+                  <MapPin className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Location</p>
-                  <span className="font-medium">
-                    Bengaluru ,Karnatka India
+                  <p className="text-xs sm:text-sm text-muted-foreground">Location</p>
+                  <span className="text-sm sm:text-base font-medium">
+                    Bengaluru, Karnataka India
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="pt-8">
-  <h4 className="font-medium mb-4 text-muted-foreground">Find me on</h4>
-  <div className="flex gap-3">
-    {[
-      {
-        icon: Linkedin,
-        label: "LinkedIn",
-        url: "https://www.linkedin.com/in/codewithkinu",
-      },
-      {
-        icon: Twitter,
-        label: "Twitter",
-        url: "#", // Add your real Twitter 
-      },
-      {
-        icon: Github,
-        label: "GitHub",
-        url: "https://github.com/Sahilmd01",
-      },
-      {
-        icon: Instagram,
-        label: "Instagram",
-        url: "https://www.instagram.com/dubbinut", // instagram link
-      },
-    ].map((social, index) => (
-      <a
-        key={index}
-        href={social.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="p-3 rounded-xl bg-accent hover:bg-primary/10 text-muted-foreground hover:text-primary transition-all duration-300"
-        aria-label={social.label}
-      >
-        <social.icon className="h-5 w-5" />
-      </a>
-    ))}
-  </div>
-</div>
-
+            <div className="pt-6 sm:pt-8">
+              <h4 className="font-medium mb-3 sm:mb-4 text-xs sm:text-sm text-muted-foreground">Find me on</h4>
+              <div className="flex gap-2 sm:gap-3">
+                {[
+                  {
+                    icon: Linkedin,
+                    label: "LinkedIn",
+                    url: "https://www.linkedin.com/in/codewithkinu",
+                  },
+                  {
+                    icon: Twitter,
+                    label: "Twitter",
+                    url: "#",
+                  },
+                  {
+                    icon: Github,
+                    label: "GitHub",
+                    url: "https://github.com/Sahilmd01",
+                  },
+                  {
+                    icon: Instagram,
+                    label: "Instagram",
+                    url: "https://www.instagram.com/dubbinut",
+                  },
+                ].map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-accent hover:bg-primary/10 text-muted-foreground hover:text-primary transition-all duration-300"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="h-4 w-4 sm:h-5 sm:w-5" />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Contact Form */}
-          <div className="p-8 rounded-2xl bg-card border border-border shadow-sm">
-            <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-              <span className="w-4 h-4 rounded-full bg-primary"></span>
+          <div className="p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-card border border-border shadow-sm">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex items-center gap-2">
+              <span className="w-3 sm:w-4 h-3 sm:h-4 rounded-full bg-primary"></span>
               Send Me a Message
             </h3>
 
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form className="space-y-4 sm:space-y-6" onSubmit={handleSubmit}>
               <div className="space-y-1">
                 <label
                   htmlFor="name"
-                  className="text-sm font-medium text-muted-foreground"
+                  className="text-xs sm:text-sm font-medium text-muted-foreground"
                 >
                   Your Name
                 </label>
@@ -230,7 +230,7 @@ export const ContactSection = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all text-sm sm:text-base"
                   placeholder="John Doe"
                 />
               </div>
@@ -238,7 +238,7 @@ export const ContactSection = () => {
               <div className="space-y-1">
                 <label
                   htmlFor="email"
-                  className="text-sm font-medium text-muted-foreground"
+                  className="text-xs sm:text-sm font-medium text-muted-foreground"
                 >
                   Your Email
                 </label>
@@ -249,7 +249,7 @@ export const ContactSection = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all text-sm sm:text-base"
                   placeholder="john@example.com"
                 />
               </div>
@@ -257,7 +257,7 @@ export const ContactSection = () => {
               <div className="space-y-1">
                 <label
                   htmlFor="message"
-                  className="text-sm font-medium text-muted-foreground"
+                  className="text-xs sm:text-sm font-medium text-muted-foreground"
                 >
                   Your Message
                 </label>
@@ -267,8 +267,8 @@ export const ContactSection = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={5}
-                  className="w-full px-4 py-3 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all resize-none"
+                  rows={4}
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all resize-none text-sm sm:text-base"
                   placeholder="Hey, I'd love to collaborate on..."
                 />
               </div>
@@ -277,19 +277,19 @@ export const ContactSection = () => {
                 type="submit"
                 disabled={isSubmitting}
                 className={cn(
-                  "w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-gradient-to-r from-primary to-purple-600 text-white font-medium hover:opacity-90 transition-all duration-300 shadow-lg shadow-primary/20",
+                  "w-full flex items-center justify-center gap-2 py-2 sm:py-3 px-4 sm:px-6 rounded-lg sm:rounded-xl bg-gradient-to-r from-primary to-purple-600 text-white font-medium hover:opacity-90 transition-all duration-300 shadow-lg shadow-primary/20 text-sm sm:text-base",
                   isSubmitting && "opacity-80 cursor-not-allowed"
                 )}
               >
                 {isSubmitting ? (
                   <>
-                    <Loader2 className="h-5 w-5 animate-spin" />
+                    <Loader2 className="h-4 w-4 sm:h-5 sm:w-5 animate-spin" />
                     Sending...
                   </>
                 ) : (
                   <>
                     Send Message
-                    <Send size={18} />
+                    <Send size={16} className="sm:size-[18px]" />
                   </>
                 )}
               </button>
