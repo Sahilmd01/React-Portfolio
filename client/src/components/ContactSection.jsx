@@ -84,7 +84,8 @@ export const ContactSection = () => {
         toast({
           title: "Message sent! 🎉",
           description: "I'll get back to you within 24 hours.",
-          variant: "success"
+          variant: "success",
+          className: "bg-green-600 text-white dark:bg-green-500 border border-green-700 shadow-lg"
         });
         setFormData({ name: '', email: '', message: '' });
       } else {
