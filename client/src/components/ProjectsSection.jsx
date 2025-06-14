@@ -18,8 +18,8 @@ const projects = [
                   Experience seamless publishing, intelligent suggestions, and personalized reading`,
     image: "/projects/project2.png",
     tags: ["React", "Express.js", "Next.js", "TailwindCSS","MongoDB","Gemini"],
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://blogni.vercel.app/",
+    githubUrl: "https://github.com/Sahilmd01/Blogni.git",
   },
   {
     id: 3,
