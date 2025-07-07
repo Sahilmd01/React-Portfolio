@@ -4,56 +4,57 @@ import { useState } from "react";
 const projects = [
   {
     id: 1,
-    title: "E-commerce Food Web with payment Gatway",
-    description: "Eattoo is a beautiful full stack MERN e-commerce website with food delivery functionality, user authentication, and payment processing.",
+    title: "E-commerce web Application",
+    description: "Vante & co. is fully functionality, user authentication, and payment processing web application.",
     image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "MongoDB", "Express", "Node", "Stripe"],
-    demoUrl: "https://eattoo-food-delivery-website-frontend.onrender.com/",
-    githubUrl: "https://github.com/Sahilmd01/Eattoo-food-delivery-website.git",
+    tags: ["React", "TailwindCSS", "MongoDB", "Express", "Node", "Stripe","rozerpay"],
+    demoUrl: "https://e-commerce-website-4w6a.vercel.app",
+    githubUrl: "https://github.com/Sahilmd01/E-commerce-website.git",
   },
   {
     id: 2,
-    title: "AI Powered Blog Web Based on Gemini",
-    description: `A dynamic MERN stack blog powered by Google Gemini AI for smart content generation.
-                  Experience seamless publishing, intelligent suggestions, and personalized reading`,
+    title: "MERN stack Chat Application",
+    description: `A real-time MERN stack chat app with media sharing, user authentication, and responsive UI.
+                  Supports text, images, and file sharing using Socket.IO and Multer.`,
     image: "/projects/project2.png",
-    tags: ["React", "Express.js", "Next.js", "TailwindCSS","MongoDB","Gemini"],
-    demoUrl: "#",
-    githubUrl: "#",
+    tags: ["React", "Express.js", "Socket.IO", "TailwindCSS", "MongoDB", "express"],
+    demoUrl: "https://converse-pro-frontend.vercel.app",
+    githubUrl: "https://github.com/Sahilmd01/converse-pro.git",
   },
   {
     id: 3,
-    title: "E-commerce Platform",
-    description: `Full-featured e-commerce platform with user authentication, product management, cart system, and Stripe payment processing.`,
+    title: "AI Powered Blog Web",
+    description: `AI-powered blog website using MERN stack with Gemini integration. Admin panel allows automatic blog generation and editing using 
+                  Google Gemini for smart, SEO-friendly content creation.`,
     image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe", "Redux"],
-    demoUrl: "#",
-    githubUrl: "#",
+    tags: ["React", "Node.js", "Express", "Redux", "MongoDB", "clerk"],
+    demoUrl: "https://blogni.vercel.app",
+    githubUrl: "https://github.com/Sahilmd01/Blogni.git",
   },
   {
     id: 4,
-    title: "E-commerce Platform",
-    description: "Full-featured e-commerce platform with user authentication, product management, cart system, and Stripe payment processing.",
-    image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe", "Redux"],
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "Smart Expence Tracker",
+    description: "A MERN stack expense tracker with user authentication, real-time budget updates, and categorized expense management. Tracks income, spending, and displays insights with charts and analytics.",
+    image: "/projects/project4.png",
+    tags: ["React", "Node.js", "chats", "Redux","mongoDB","Express.js"],
+    demoUrl: "https://spendlix.vercel.app/login",
+    githubUrl: "https://github.com/Sahilmd01/Spendlix.git",
   },
   {
     id: 5,
-    title: "E-commerce Platform",
-    description: "Full-featured e-commerce platform with user authentication, product management, cart system, and Stripe payment processing.",
-    image: "/projects/project3.png",
+    title: "E-commerce Food Web with payment Gatway",
+    description: "Eattoo is a beautiful full stack MERN e-commerce website with food delivery functionality, user authentication, and payment processing.",
+    image: "/projects/project5.png",
     tags: ["React", "Node.js", "Stripe", "Redux"],
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://eattoo-food-delivery-website-frontend.onrender.com/",
+    githubUrl: "https://github.com/Sahilmd01/Eattoo-food-delivery-website.git",
   },
   {
     id: 6,
     title: "E-commerce Platform",
     description: "Full-featured e-commerce platform with user authentication, product management, cart system, and Stripe payment processing.",
-    image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe", "Redux"],
+    image: "/projects/project6.png",
+    tags: ["React", "Node.js", "Stripe", "Redux","underDevelopment"],
     demoUrl: "#",
     githubUrl: "#",
   },
@@ -61,7 +62,7 @@ const projects = [
 
 export const ProjectsSection = () => {
   const [showAll, setShowAll] = useState(false);
-  
+
   const displayedProjects = showAll ? projects : projects.slice(0, 3);
 
   return (
@@ -100,10 +101,10 @@ export const ProjectsSection = () => {
                 <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, index) => (
-                    <span 
+                    <span
                       key={index}
                       className="px-3 py-1 text-xs font-medium rounded-full bg-muted text-foreground border border-muted-foreground/10 hover:bg-primary hover:text-primary-foreground transition-colors"
                     >
@@ -145,11 +146,10 @@ export const ProjectsSection = () => {
           {projects.length > 3 && (
             <button
               onClick={() => setShowAll(!showAll)}
-              className={`inline-flex items-center justify-center px-6 py-3 rounded-full font-medium transition-colors shadow-lg hover:-translate-y-1 transform transition-all duration-300 ${
-                showAll
-                  ? "bg-muted text-foreground hover:bg-muted/80 border border-muted-foreground/20"
-                  : "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-primary/30"
-              }`}
+              className={`inline-flex items-center justify-center px-6 py-3 rounded-full font-medium transition-colors shadow-lg hover:-translate-y-1 transform transition-all duration-300 ${showAll
+                ? "bg-muted text-foreground hover:bg-muted/80 border border-muted-foreground/20"
+                : "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-primary/30"
+                }`}
             >
               {showAll ? (
                 <>
