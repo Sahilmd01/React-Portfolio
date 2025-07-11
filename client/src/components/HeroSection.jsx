@@ -97,7 +97,7 @@ export const HeroSection = () => {
             className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight"
             variants={itemVariants}
           >
-            <span className="inline-block">Hi, I'm</span>
+            <span className="inline-block">I'm</span>
             <motion.span 
               className="text-primary inline-block ml-3 relative"
               variants={itemVariants}
