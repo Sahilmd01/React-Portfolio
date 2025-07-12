@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
-import { 
-  Home, 
-  User, 
-  Code, 
-  Briefcase, 
-  MessageSquare, 
-  Mail, 
+import { useEffect, useState, useRef } from "react";
+import {
+  Home,
+  User,
+  Code,
+  Briefcase,
+  MessageSquare,
+  Mail,
   BookOpen,
-  Sun, 
+  Sun,
   Moon
 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -78,20 +78,20 @@ const ThemeToggle = () => {
 export const Navbar = () => {
   const [activeSection, setActiveSection] = useState("#hero");
   const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastScrollYRef = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Detect scroll direction
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setShowNavbar(false); // Scrolling down
+      // Scroll direction detection
+      if (currentScrollY > lastScrollYRef.current && currentScrollY > 100) {
+        setShowNavbar(false); // scrolling down
       } else {
-        setShowNavbar(true); // Scrolling up
+        setShowNavbar(true); // scrolling up
       }
 
-      setLastScrollY(currentScrollY);
+      lastScrollYRef.current = currentScrollY;
 
       // Active section detection
       const sections = navItems.map(item => item.href);
@@ -116,15 +116,16 @@ export const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   return (
     <motion.div
       className={cn(
-        "fixed inset-x-0 top-4 md:bottom-4 md:top-auto md:left-1/2 md:-translate-x-1/2 z-50 flex justify-center",
-        "transition-transform duration-300",
-        showNavbar ? "translate-y-0" : "-translate-y-full md:translate-y-full"
+        "fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50",
+        "transition-transform duration-300 ease-in-out",
+        showNavbar ? "translate-y-0" : "translate-y-full"
       )}
+      style={{ willChange: "transform" }}
       initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.3 }}
