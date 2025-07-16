@@ -160,3 +160,7 @@
   padding: 0;
   text-align: center;
 }
+
+::-webkit-scrollbar{
+  display:none
+}
