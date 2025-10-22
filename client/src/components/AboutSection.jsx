@@ -23,10 +23,10 @@ export const AboutSection = () => {
   const features = ["Full-stack expertise", "Clean, maintainable code", "Performance optimization", "Agile methodology", "24/7 support", "Timely delivery"];
 
   const socialLinks = [
-    { icon: <Github className="h-5 w-5" />, href: "#" },
-    { icon: <Linkedin className="h-5 w-5" />, href: "#" },
+    { icon: <Github className="h-5 w-5" />, href: "https://www.github.com/sahilmd01" },
+    { icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/in/codewithkinu" },
     { icon: <Twitter className="h-5 w-5" />, href: "#" },
-    { icon: <Mail className="h-5 w-5" />, href: "#contact" }
+    { icon: <Mail className="h-5 w-5" />, href: "https://maitto:sahilmd.dev@gmail.com" }
   ];
 
   const tabContent = {
