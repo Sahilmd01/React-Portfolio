@@ -15,7 +15,7 @@ export const AboutSection = () => {
   ];
 
   const techStack = [
-    { category: "Frontend", items: ["React", "Next.js", "TypeScript","JavaScript","HTML", "Tailwind"] },
+    { category: "Frontend", items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "Tailwind"] },
     { category: "Backend", items: ["Node.js", "Express", "Java", "Python"] },
     { category: "Cloud", items: ["AWS", "Docker", "Vercel", "MongoDB"] }
   ];
@@ -184,8 +184,15 @@ export const AboutSection = () => {
                 <a href="#contact" className="flex-1 block w-full p-3 sm:p-4 bg-primary text-primary-foreground rounded-xl text-center font-semibold transition-all duration-300 hover:bg-primary/90 hover:scale-105 hover:shadow-lg group">
                   <div className="flex items-center justify-center gap-2 sm:gap-3"><User className="h-4 sm:h-5 w-4 sm:w-5 group-hover:scale-110 transition-transform duration-300" />Start a Project</div>
                 </a>
-                <a href="/md-sahil-resume.pdf" className="flex-1 block w-full p-3 sm:p-4 border border-border rounded-xl text-center font-semibold transition-all duration-300 hover:bg-accent hover:border-primary/30 hover:scale-105 hover:shadow-lg group" download>
-                  <div className="flex items-center justify-center gap-2 sm:gap-3"><Download className="h-4 sm:h-5 w-4 sm:w-5 group-hover:translate-y-0.5 transition-transform duration-300" />Download Resume</div>
+                <a
+                  href="/sahil-resume.pdf"
+                  download="Sahil-resume.pdf"
+                  className="flex-1 block w-full p-3 sm:p-4 border border-border rounded-xl text-center font-semibold transition-all duration-300 hover:bg-accent hover:border-primary/30 hover:scale-105 hover:shadow-lg group"
+                >
+                  <div className="flex items-center justify-center gap-2 sm:gap-3">
+                    <Download className="h-4 sm:h-5 w-4 sm:w-5 group-hover:translate-y-0.5 transition-transform duration-300" />
+                    Download Resume
+                  </div>
                 </a>
               </div>
 
