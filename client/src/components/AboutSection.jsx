@@ -49,7 +49,7 @@ export const AboutSection = () => {
   // Programmatic download function
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/sahil-resume.pdf'; // Must be in public folder
+    link.href = '/Sahil-resume.pdf'; // Must be in public folder
     link.download = 'Sahil-resume.pdf';
     document.body.appendChild(link);
     link.click();

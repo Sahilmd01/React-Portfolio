@@ -22,7 +22,7 @@ export const HeroSection = () => {
     "// Featured: E-commerce, SaaS, Enterprise, Startup MVPs",
     "",
     "developer.connect();",
-    "console.log('🚀 Let’s build something exceptional together!');"
+    "console.log('🚀 Let's build something exceptional together!');"
   ];
 
   const achievements = [
@@ -52,6 +52,11 @@ export const HeroSection = () => {
       }, 800);
     }
   }, [displayedCode, currentCodeLine]);
+
+  const handleViewResume = () => {
+    // Open resume in new tab
+    window.open('/Sahil-resume.pdf', '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-background via-background/95 to-primary/10" ref={ref}>
@@ -133,10 +138,15 @@ export const HeroSection = () => {
                 <span>Technical Interview</span>
               </motion.a>
               
-              <motion.a href="/resume.pdf" download className="group relative overflow-hidden px-6 py-4 rounded-xl font-semibold border border-border text-muted-foreground hover:border-primary/30 transition-all duration-300 bg-background/60 backdrop-blur-sm text-sm flex items-center justify-center gap-2" whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
+              <motion.button 
+                onClick={handleViewResume}
+                className="group relative overflow-hidden px-6 py-4 rounded-xl font-semibold border border-border text-muted-foreground hover:border-primary/30 transition-all duration-300 bg-background/60 backdrop-blur-sm text-sm flex items-center justify-center gap-2" 
+                whileHover={{ scale: 1.05, y: -2 }} 
+                whileTap={{ scale: 0.95 }}
+              >
                 <Download className="h-4 w-4" /> 
-                <span>Download CV</span>
-              </motion.a>
+                <span>View Resume</span>
+              </motion.button>
             </motion.div>
 
             <motion.div className="mt-6 text-center lg:text-left" variants={{ hidden: { y: 30, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}>
