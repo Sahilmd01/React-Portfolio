@@ -26,7 +26,7 @@ export const AboutSection = () => {
     { icon: <Github className="h-5 w-5" />, href: "https://www.github.com/sahilmd01" },
     { icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/in/codewithkinu" },
     { icon: <Twitter className="h-5 w-5" />, href: "#" },
-    { icon: <Mail className="h-5 w-5" />, href: "https://maitto:sahilmd.dev@gmail.com" }
+    { icon: <Mail className="h-5 w-5" />, href: "mailto:sahilmd.dev@gmail.com" }
   ];
 
   const tabContent = {
@@ -45,6 +45,16 @@ export const AboutSection = () => {
     const interval = setInterval(() => setCounter(prev => (prev + 1) % 4), 2000);
     return () => clearInterval(interval);
   }, []);
+
+  // Programmatic download function
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/sahil-resume.pdf'; // Must be in public folder
+    link.download = 'Sahil-resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <section id="about" className="relative py-16 md:py-28 px-4 sm:px-6 lg:px-12 bg-gradient-to-br from-background via-background to-primary/5 overflow-hidden">
@@ -77,7 +87,7 @@ export const AboutSection = () => {
         </div>
 
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 md:gap-12">
-          {/* Left Columns */}
+          {/* Left Column */}
           <div className="xl:col-span-2 space-y-8">
             {/* About Card */}
             <div className="bg-card/50 border border-border rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl transition-all duration-500 hover:shadow-3xl hover:border-primary/40 hover:bg-card/60 relative overflow-hidden group">
@@ -121,7 +131,7 @@ export const AboutSection = () => {
 
                 {/* Tabs */}
                 <div className="flex flex-col sm:flex-row border-b border-border mb-4 sm:mb-6">
-                  {['personal', 'professional', 'approach'].map((tab) => (
+                  {['personal', 'professional', 'approach'].map(tab => (
                     <button
                       key={tab}
                       onClick={() => setActiveTab(tab)}
@@ -132,7 +142,7 @@ export const AboutSection = () => {
                   ))}
                 </div>
 
-                {/* Tab Content with AnimatePresence */}
+                {/* Tab Content */}
                 <div className="min-h-[100px] sm:min-h-[120px]">
                   <AnimatePresence mode="sync">
                     <motion.p
@@ -184,16 +194,17 @@ export const AboutSection = () => {
                 <a href="#contact" className="flex-1 block w-full p-3 sm:p-4 bg-primary text-primary-foreground rounded-xl text-center font-semibold transition-all duration-300 hover:bg-primary/90 hover:scale-105 hover:shadow-lg group">
                   <div className="flex items-center justify-center gap-2 sm:gap-3"><User className="h-4 sm:h-5 w-4 sm:w-5 group-hover:scale-110 transition-transform duration-300" />Start a Project</div>
                 </a>
-                <a
-                  href="/sahil-resume.pdf"
-                  download="Sahil-resume.pdf"
+
+                {/* Download Button */}
+                <button
+                  onClick={handleDownload}
                   className="flex-1 block w-full p-3 sm:p-4 border border-border rounded-xl text-center font-semibold transition-all duration-300 hover:bg-accent hover:border-primary/30 hover:scale-105 hover:shadow-lg group"
                 >
                   <div className="flex items-center justify-center gap-2 sm:gap-3">
                     <Download className="h-4 sm:h-5 w-4 sm:w-5 group-hover:translate-y-0.5 transition-transform duration-300" />
                     Download Resume
                   </div>
-                </a>
+                </button>
               </div>
 
               {/* Social Links */}
