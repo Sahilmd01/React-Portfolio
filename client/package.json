@@ -12,6 +12,7 @@
   "dependencies": {
     "@radix-ui/react-toast": "^1.2.10",
     "@tailwindcss/vite": "^4.1.4",
+    "@vercel/analytics": "^1.5.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.17.1",
