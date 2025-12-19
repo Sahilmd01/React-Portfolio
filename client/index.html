@@ -5,125 +5,70 @@
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Primary Meta Tags -->
-    <title>MD Sahil - Full Stack Developer | React & JavaScript Specialist</title>
-    <meta name="description" content="MD Sahil: Expert Full Stack Developer specializing in React, JavaScript, and modern web technologies. Building responsive, high-performance web applications." />
-    <meta name="keywords" content="MD Sahil, Full Stack Developer, Frontend Developer, React Developer, JavaScript Developer, Web Developer, Portfolio, MERN Stack, Tailwind CSS, Node.js" />
+    <!-- ================= BASIC SEO ================= -->
+    <title>MD Sahil | Full Stack Developer (React & MERN)</title>
+
+    <meta
+      name="description"
+      content="MD Sahil is a Full Stack Developer specializing in React, JavaScript, MERN Stack, and high-performance web applications."
+    />
+
     <meta name="author" content="MD Sahil" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://mdsahilfullstack.vercel.app/" />
+    <meta name="robots" content="index, follow" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="MD Sahil - Full Stack Developer | React & JavaScript Specialist" />
-    <meta property="og:description" content="Expert Full Stack Developer specializing in React, JavaScript, and modern web technologies. Building responsive, high-performance web applications." />
-    <meta property="og:image" content="https://mdsahilfullstack.vercel.app/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:url" content="https://mdsahilfullstack.vercel.app/" />
+    <!-- ================= CANONICAL ================= -->
+    <link rel="canonical" href="https://sahil.devlyhub.in/" />
+
+    <!-- ================= OPEN GRAPH ================= -->
+    <meta property="og:title" content="MD Sahil | Full Stack Developer" />
+    <meta property="og:description" content="Portfolio of MD Sahil – Full Stack Developer (React, MERN Stack)" />
+    <meta property="og:image" content="https://sahil.devlyhub.in/og-image.png" />
+    <meta property="og:url" content="https://sahil.devlyhub.in/" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="MD Sahil Portfolio" />
-    <meta property="og:locale" content="en_US" />
 
-    <!-- Twitter -->
+    <!-- ================= TWITTER ================= -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="MD Sahil - Full Stack Developer | React & JavaScript Specialist" />
-    <meta name="twitter:description" content="Expert Full Stack Developer specializing in React, JavaScript, and modern web technologies." />
-    <meta name="twitter:image" content="https://mdsahilfullstack.vercel.app/og-image.png" />
-    <meta name="twitter:site" content="@mdsahil" />
-    <meta name="twitter:creator" content="@mdsahil" />
+    <meta name="twitter:title" content="MD Sahil | Full Stack Developer" />
+    <meta name="twitter:description" content="React & MERN Stack Developer building scalable web apps." />
+    <meta name="twitter:image" content="https://sahil.devlyhub.in/og-image.png" />
 
-    <!-- Additional SEO Meta Tags -->
-    <meta name="theme-color" content="#3b82f6" />
-    <meta name="msapplication-TileColor" content="#3b82f6" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="/src/main.jsx" as="script" />
-    
-    <!-- Structured Data (JSON-LD) - Enhanced -->
+    <!-- ================= THEME ================= -->
+    <meta name="theme-color" content="#2563eb" />
+
+    <!-- ================= STRUCTURED DATA ================= -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "MD Sahil",
-        "url": "https://mdsahilfullstack.vercel.app/",
-        "image": "https://mdsahilfullstack.vercel.app/og-image.png",
-        "sameAs": [
-          "https://github.com/mdsahil",
-          "https://linkedin.com/in/mdsahil",
-          "https://twitter.com/mdsahil"
-        ],
+        "url": "https://sahil.devlyhub.in/",
+        "image": "https://sahil.devlyhub.in/og-image.png",
         "jobTitle": "Full Stack Developer",
         "worksFor": {
           "@type": "Organization",
-          "name": "Freelance"
+          "name": "DevlyHub"
         },
+        "sameAs": [
+          "https://github.com/sahilmd01",
+          "https://www.linkedin.com/in/codewithkinu",
+          "https://twitter.com/mdsahil"
+        ],
         "knowsAbout": [
           "React",
           "JavaScript",
           "Node.js",
+          "MongoDB",
+          "Express.js",
+          "MERN Stack",
           "Tailwind CSS",
-          "Web Development",
-          "Full Stack Development"
-        ],
-        "description": "Full Stack Developer specializing in React, JavaScript, and modern web technologies"
-      }
-    </script>
-    
-    <!-- Additional schema for Website -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "MD Sahil Portfolio",
-        "url": "https://mdsahilfullstack.vercel.app/",
-        "description": "Portfolio of MD Sahil, Full Stack Developer specializing in React and JavaScript",
-        "author": {
-          "@type": "Person",
-          "name": "MD Sahil"
-        }
+          "SEO Optimization"
+        ]
       }
     </script>
   </head>
+
   <body>
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <!-- Semantic HTML structure for better SEO -->
-    <header role="banner">
-      <nav role="navigation" aria-label="Main navigation">
-        <!-- Navigation content will be rendered by React -->
-      </nav>
-    </header>
-    
-    <main id="main-content" role="main">
-      <div id="root"></div>
-    </main>
-    
-    <footer role="contentinfo">
-      <!-- Footer content will be rendered by React -->
-    </footer>
-    
+    <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    
-    <style>
-      /* Basic accessibility styles */
-      .skip-link {
-        position: absolute;
-        top: -40px;
-        left: 6px;
-        background: #000;
-        color: white;
-        padding: 8px;
-        z-index: 100;
-        text-decoration: none;
-      }
-      
-      .skip-link:focus {
-        top: 0;
-      }
-    </style>
   </body>
 </html>
