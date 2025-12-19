@@ -28,7 +28,7 @@ const WelcomeScreen = ({ onWelcomeComplete }) => {
   };
 
   const currentColors = colors[theme] || colors.dark;
-  const portfolioUrl = "sahilfullstackportfolio.netlify.app";
+  const portfolioUrl = "www.devlyhub.in";
   const welcomeMessages = [
     "Crafting digital experiences",
     "Software Engineer",
