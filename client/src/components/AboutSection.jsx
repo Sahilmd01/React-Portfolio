@@ -1,39 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Briefcase, Code, User, Download, Calendar, Sparkles, Target, Github, Linkedin, Twitter, Mail, Star } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { achievements, techStack, features, socialLinks, tabContent } from "@/data";
 
 export const AboutSection = () => {
   const [activeTab, setActiveTab] = useState('personal');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [counter, setCounter] = useState(0);
 
-  const achievements = [
-    { number: "15+", label: "Projects", icon: <Briefcase className="h-5 w-5" />, suffix: "" },
-    { number: "1", label: "Years Exp", icon: <Calendar className="h-5 w-5" />, suffix: "+" },
-    { number: "99", label: "Success", icon: <Target className="h-5 w-5" />, suffix: "%" },
-    { number: "10", label: "Clients", icon: <User className="h-5 w-5" />, suffix: "+" }
-  ];
-
-  const techStack = [
-    { category: "Frontend", items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "Tailwind"] },
-    { category: "Backend", items: ["Node.js", "Express", "Java", "Python"] },
-    { category: "Cloud", items: ["AWS", "Docker", "Vercel", "MongoDB"] }
-  ];
-
-  const features = ["Full-stack expertise", "Clean, maintainable code", "Performance optimization", "Agile methodology", "24/7 support", "Timely delivery"];
-
-  const socialLinks = [
-    { icon: <Github className="h-5 w-5" />, href: "https://www.github.com/sahilmd01" },
-    { icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/in/codewithkinu" },
-    { icon: <Twitter className="h-5 w-5" />, href: "#" },
-    { icon: <Mail className="h-5 w-5" />, href: "mailto:sahilmd.dev@gmail.com" }
-  ];
-
-  const tabContent = {
-    personal: "Passionate about creating digital solutions that make a difference. When I'm not coding, I'm exploring new technologies, contributing to open-source, and mentoring aspiring developers.",
-    professional: "With 1+ years in full-stack development, I've delivered 15+ successful projects using modern technologies. I specialize in scalable architecture and performance optimization.",
-    approach: "I believe in clean code, thorough testing, and user-centered design. My process emphasizes collaboration, agile methodologies, and continuous improvement."
-  };
 
   useEffect(() => {
     const handleMouseMove = (e) => setMousePosition({ x: e.clientX, y: e.clientY });
@@ -63,8 +37,8 @@ export const AboutSection = () => {
         <div className="absolute w-72 sm:w-96 h-72 sm:h-96 bg-primary/5 rounded-full blur-3xl transition-all duration-1000 ease-out" style={{ transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)` }} />
         <div className="absolute w-60 sm:w-80 h-60 sm:h-80 bg-secondary/5 rounded-full blur-3xl transition-all duration-1500 ease-out" style={{ transform: `translate(${mousePosition.x * -0.03}px, ${mousePosition.y * -0.03}px)` }} />
         <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:64px_64px]" />
-        <div className="absolute top-16 right-8 sm:top-20 sm:right-20 animate-float"><div className="w-6 sm:w-8 h-6 sm:h-8 bg-primary/20 rounded-lg rotate-45" /></div>
-        <div className="absolute bottom-32 left-8 sm:bottom-40 sm:left-20 animate-float animation-delay-2000"><div className="w-5 sm:w-6 h-5 sm:h-6 bg-secondary/20 rounded-full" /></div>
+        <div className="absolute top-16 right-8 sm:top-20 sm:right-20 animate-float-3s"><div className="w-6 sm:w-8 h-6 sm:h-8 bg-primary/20 rounded-lg rotate-45" /></div>
+        <div className="absolute bottom-32 left-8 sm:bottom-40 sm:left-20 animate-float-3s animation-delay-2000"><div className="w-5 sm:w-6 h-5 sm:h-6 bg-secondary/20 rounded-full" /></div>
       </div>
 
       <div className="container mx-auto max-w-7xl relative">
@@ -253,13 +227,6 @@ export const AboutSection = () => {
       </div>
 
       {/* Styles */}
-      <style>
-        {`
-          @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
-          .animate-float { animation: float 3s ease-in-out infinite; }
-          .animation-delay-2000 { animation-delay: 2s; }
-        `}
-      </style>
     </section>
   );
 };

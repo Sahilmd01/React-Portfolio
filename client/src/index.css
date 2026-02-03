@@ -164,3 +164,11 @@
 ::-webkit-scrollbar{
   display:none
 }
+
+@utility animate-float-3s {
+  animation: float 3s ease-in-out infinite;
+}
+
+@utility animation-delay-2000 {
+  animation-delay: 2s;
+}

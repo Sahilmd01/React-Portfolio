@@ -114,7 +114,9 @@ export const Navbar = () => {
 
       lastScrollYRef.current = currentScrollY;
 
-      const sections = navItems.map((item) => item.href);
+      const sections = navItems
+        .map((item) => item.href)
+        .filter((href) => href.startsWith("#"));
       const scrollPosition = currentScrollY + 100;
 
       for (const section of sections) {
@@ -168,7 +170,7 @@ export const Navbar = () => {
 
         {/* GitHub Button */}
         <motion.a
-          href="https://github.com/sahilmd01" 
+          href="https://github.com/sahilmd01"
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
@@ -187,7 +189,7 @@ export const Navbar = () => {
 
         {/* LinkedIn Button */}
         <motion.a
-          href="https://linkedin.com/in/codewithkinu" 
+          href="https://linkedin.com/in/codewithkinu"
           target="_blank"
           rel="noopener noreferrer"
           className={cn(

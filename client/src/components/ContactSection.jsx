@@ -12,6 +12,7 @@ import {
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import { contactInfo, socialLinks } from "@/data";
 
 export const ContactSection = () => {
   const { toast } = useToast();
@@ -21,7 +22,7 @@ export const ContactSection = () => {
     email: '',
     message: ''
   });
-  
+
   const validateForm = () => {
     if (!formData.name.trim()) {
       toast({
@@ -30,7 +31,7 @@ export const ContactSection = () => {
       });
       return false;
     }
-    
+
     if (!formData.email.trim()) {
       toast({
         title: "Email is required",
@@ -44,7 +45,7 @@ export const ContactSection = () => {
       });
       return false;
     }
-    
+
     if (!formData.message.trim() || formData.message.length < 10) {
       toast({
         title: "Message must be at least 10 characters",
@@ -52,10 +53,10 @@ export const ContactSection = () => {
       });
       return false;
     }
-    
+
     return true;
   };
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -66,11 +67,11 @@ export const ContactSection = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) return;
-    
+
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch('https://formspree.io/f/xwpbojaj', {
         method: 'POST',
@@ -126,83 +127,43 @@ export const ContactSection = () => {
             </h3>
 
             <div className="space-y-4 sm:space-y-6">
-              <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-accent/30 rounded-lg sm:rounded-xl transition-all duration-300">
-                <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary">
-                  <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
+              {contactInfo.map((info, index) => (
+                <div key={index} className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-accent/30 rounded-lg sm:rounded-xl transition-all duration-300">
+                  <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary">
+                    {info.icon}
+                  </div>
+                  <div>
+                    <p className="text-xs sm:text-sm text-muted-foreground">{info.label}</p>
+                    {info.href ? (
+                      <a
+                        href={info.href}
+                        className="text-sm sm:text-base font-medium hover:text-primary transition-colors"
+                      >
+                        {info.text}
+                      </a>
+                    ) : (
+                      <span className="text-sm sm:text-base font-medium">
+                        {info.text}
+                      </span>
+                    )}
+                  </div>
                 </div>
-                <div>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Email</p>
-                  <a
-                    href="mailto:codewithkinu@gmail.com"
-                    className="text-sm sm:text-base font-medium hover:text-primary transition-colors"
-                  >
-                    codewithkinu@gmail.com
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-accent/30 rounded-lg sm:rounded-xl transition-all duration-300">
-                <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary">
-                  <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
-                </div>
-                <div>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Phone</p>
-                  <a
-                    href="tel:+919315145594"
-                    className="text-sm sm:text-base font-medium hover:text-primary transition-colors"
-                  >
-                    +91 9315145594
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-accent/30 rounded-lg sm:rounded-xl transition-all duration-300">
-                <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary">
-                  <MapPin className="h-4 w-4 sm:h-5 sm:w-5" />
-                </div>
-                <div>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Location</p>
-                  <span className="text-sm sm:text-base font-medium">
-                    Bengaluru, Karnataka India
-                  </span>
-                </div>
-              </div>
+              ))}
             </div>
 
             <div className="pt-6 sm:pt-8">
               <h4 className="font-medium mb-3 sm:mb-4 text-xs sm:text-sm text-muted-foreground">Find me on</h4>
               <div className="flex gap-2 sm:gap-3">
-                {[
-                  {
-                    icon: Linkedin,
-                    label: "LinkedIn",
-                    url: "https://www.linkedin.com/in/codewithkinu",
-                  },
-                  {
-                    icon: Twitter,
-                    label: "Twitter",
-                    url: "#",
-                  },
-                  {
-                    icon: Github,
-                    label: "GitHub",
-                    url: "https://github.com/Sahilmd01",
-                  },
-                  {
-                    icon: Instagram,
-                    label: "Instagram",
-                    url: "https://www.instagram.com/dubbinut",
-                  },
-                ].map((social, index) => (
+                {socialLinks.map((social, index) => (
                   <a
                     key={index}
-                    href={social.url}
+                    href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-accent hover:bg-primary/10 text-muted-foreground hover:text-primary transition-all duration-300"
                     aria-label={social.label}
                   >
-                    <social.icon className="h-4 w-4 sm:h-5 sm:w-5" />
+                    {social.icon}
                   </a>
                 ))}
               </div>
