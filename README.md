@@ -36,7 +36,7 @@ A fast, modern, and responsive developer portfolio website built using **React**
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/react-vite-portfolio.git
+   git clone https://github.com/Sahilmd01/React-Portfolio.git
    cd react-vite-portfolio
    ````
 
