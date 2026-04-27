@@ -1,5 +1,5 @@
 # 💼 Developer Portfolio – React + Vite + Tailwind
-## ⭐ Star this repo if you like it!
+## ⭐ Star this repo if you like it! let's connect and build your project
 
 
 A fast, modern, and responsive developer portfolio website built using **React**, **Vite**, and **Tailwind CSS**. Designed to showcase your projects, skills, and contact information in a clean, professional format.
