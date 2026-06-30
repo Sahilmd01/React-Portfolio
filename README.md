@@ -4,7 +4,8 @@
 
 A fast, modern, and responsive developer portfolio website built using **React**, **Vite**, and **Tailwind CSS**. Designed to showcase your projects, skills, and contact information in a clean, professional format. 
 
-## a new version mac/Ios theme portfolio is about to drop soon !
+## a new version mac/Ios theme portfolio is here : https://operaring-system-portfolio.vercel.app 
+##support and contact for source code
 
 ## 🚀 Tech Stack
 
