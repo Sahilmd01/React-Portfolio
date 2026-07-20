@@ -13,7 +13,7 @@ export const NotFound = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/10 flex items-center justify-center px-4 relative overflow-hidden">
+    <div className="h-[100dvh] w-full bg-gradient-to-br from-background via-background/95 to-primary/10 flex flex-col items-center justify-center px-4 relative overflow-hidden py-4 sm:py-6 md:py-8">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute inset-0 opacity-30">
@@ -57,19 +57,19 @@ export const NotFound = () => {
         />
       </div>
 
-      <div className="max-w-2xl w-full text-center z-10">
+      <div className="max-w-2xl w-full text-center z-10 flex flex-col justify-center items-center h-full max-h-full">
         {/* 404 Code Display */}
         <motion.div
-          className="mb-8"
+          className="mb-4 sm:mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <div className="relative inline-block">
-            <div className="text-8xl md:text-9xl font-bold bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
+            <div className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent mb-2 md:mb-4">
               404
             </div>
-            <div className="absolute -top-4 -right-4 bg-red-500 text-white text-xs font-mono px-2 py-1 rounded">
+            <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-red-500 text-white text-[10px] sm:text-xs font-mono px-2 py-0.5 sm:py-1 rounded">
               Exception
             </div>
           </div>
@@ -81,10 +81,10 @@ export const NotFound = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-3">
             Component Not Found
           </h1>
-          <p className="text-lg text-muted-foreground mb-8 max-w-lg mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-muted-foreground mb-4 md:mb-6 max-w-sm sm:max-w-md md:max-w-lg mx-auto leading-relaxed">
             The component you&apos;re looking for is undefined. It may have been unmounted,
             garbage collected, or simply lost in the dependency tree.
           </p>
@@ -92,7 +92,7 @@ export const NotFound = () => {
 
         {/* Animated Code Snippet */}
         <motion.div
-          className="bg-background/80 border border-border rounded-xl p-6 mb-8 backdrop-blur-sm max-w-md mx-auto relative overflow-hidden group"
+          className="bg-background/80 border border-border rounded-xl p-4 sm:p-5 md:p-6 mb-4 md:mb-6 backdrop-blur-sm w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto relative overflow-hidden group"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -100,18 +100,18 @@ export const NotFound = () => {
           {/* Scanline effect */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent -translate-y-full group-hover:translate-y-full transition-transform duration-1000"></div>
 
-          <div className="flex items-center gap-2 mb-4 border-b border-border pb-2">
+          <div className="flex items-center gap-2 mb-3 border-b border-border pb-2">
             <div className="flex gap-1">
-              <div className="w-3 h-3 rounded-full bg-red-400/80"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-400/80"></div>
-              <div className="w-3 h-3 rounded-full bg-green-400/80"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-red-400/80"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/80"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-green-400/80"></div>
             </div>
-            <div className="text-sm font-mono text-muted-foreground flex-1 text-center">
+            <div className="text-xs font-mono text-muted-foreground flex-1 text-center">
               stack_trace.js
             </div>
           </div>
 
-          <div className="font-mono text-sm text-left overflow-x-auto">
+          <div className="font-mono text-[10px] sm:text-xs md:text-sm text-left overflow-x-auto">
             <div className="text-muted-foreground italic mb-2">{"// 404: Uncaught ReferenceError"}</div>
             <div>
               <span className="text-purple-400">try</span> <span className="text-yellow-400">{`{`}</span>
@@ -153,19 +153,19 @@ export const NotFound = () => {
 
         {/* Action Buttons */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-row gap-3 justify-center items-center w-full max-w-xs sm:max-w-sm md:max-w-md px-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <Link to="/">
+          <Link to="/" className="flex-1">
             <motion.button
-              className="group relative overflow-hidden px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-primary to-purple-600 text-primary-foreground shadow-lg hover:shadow-xl flex items-center gap-2"
+              className="w-full justify-center group relative overflow-hidden px-4 py-2 sm:px-5 sm:py-3 rounded-xl font-semibold bg-gradient-to-r from-primary to-purple-600 text-primary-foreground shadow-lg hover:shadow-xl flex items-center gap-2 text-xs sm:text-sm"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <ArrowLeft className="h-4 w-4" />
-              <span>Back to Home</span>
+              <ArrowLeft className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+              <span>Home</span>
             </motion.button>
           </Link>
 
@@ -173,23 +173,23 @@ export const NotFound = () => {
             href="https://github.com/Sahilmd01"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative overflow-hidden px-6 py-3 rounded-xl font-semibold border border-primary/50 text-foreground hover:border-primary transition-all duration-300 bg-background/80 backdrop-blur-sm flex items-center gap-2"
+            className="flex-1 justify-center group relative overflow-hidden px-4 py-2 sm:px-5 sm:py-3 rounded-xl font-semibold border border-primary/50 text-foreground hover:border-primary transition-all duration-300 bg-background/80 backdrop-blur-sm flex items-center gap-2 text-xs sm:text-sm"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Code className="h-4 w-4" />
-            <span>View GitHub</span>
+            <Code className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+            <span>GitHub</span>
           </motion.a>
         </motion.div>
 
         {/* Fun Status Indicator */}
         <motion.div
-          className="mt-8 text-sm text-muted-foreground flex items-center justify-center gap-2"
+          className="mt-4 md:mt-6 text-[10px] sm:text-xs text-muted-foreground flex items-center justify-center gap-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full animate-pulse"></div>
           <span>System operational, just lost in space</span>
         </motion.div>
       </div>
