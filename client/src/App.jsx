@@ -8,7 +8,10 @@ import WelcomeScreen from "@/components/WelcomeScreen";
 import { Analytics } from "@vercel/analytics/react"; 
 
 function App() {
-  const [welcomeComplete, setWelcomeComplete] = useState(false);
+  const [welcomeComplete, setWelcomeComplete] = useState(() => {
+    // Bypass welcome screen for 404 routes on initial load
+    return window.location.pathname !== "/";
+  });
 
   return (
     <ThemeProvider
@@ -18,17 +21,19 @@ function App() {
       disableTransitionOnChange
     >
       <Toaster />
-      {!welcomeComplete ? (
-        <WelcomeScreen onWelcomeComplete={() => setWelcomeComplete(true)} />
-      ) : (
-        <BrowserRouter>
-          <Routes>
-            <Route index element={<Home />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <Analytics />
-        </BrowserRouter>
-      )}
+      <BrowserRouter>
+        {!welcomeComplete ? (
+          <WelcomeScreen onWelcomeComplete={() => setWelcomeComplete(true)} />
+        ) : (
+          <>
+            <Routes>
+              <Route index element={<Home />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <Analytics />
+          </>
+        )}
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
